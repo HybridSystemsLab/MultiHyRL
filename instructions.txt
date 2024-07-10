@@ -1,0 +1,17 @@
+To train a normal agent, run train_normal_static_obstacles.py and set:
+  train_hyrl = False # (line 95)
+
+To train an HyRL-MP agent run train_normal_static_obstacles.py and set:
+  train_hyrl = True # (line 95)
+  for j_train in [0, 1]: # (to train policies pi_0 and pi_1, line 128)
+
+To find the set of critical points and partition the state space, run find_critical_points_static_svm_general.py
+To find points from scratch, set:
+  load_points = False # (line 208)
+
+To test relaxed Voronoi partitions for different obstacle settings, run test_general_hyrl_mapping.py, and 
+define an obstacle setting: obstacle_setting = [(.., ..), (.., ..), ....]
+
+To test the HyRL-MP agent for static obstacles, run simulate_hybridsystems_general.py
+To test the HyRL-MP agent for moving obstacles, run simulate_hybridsystems_general_movingobstacles.py
+To test the HyRL-MP agent for in a game of Capture the Flag, run simulate_hybridsystems_general_capturetheflag.py
