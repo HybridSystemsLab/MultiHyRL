@@ -1,0 +1,23 @@
+{
+    "name": "Python Dev Container (CPU)",
+    "dockerFile": "Dockerfile",
+    "context": "../",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.insertSpaces": true,
+                "editor.tabSize": 4
+            },
+            "extensions": [
+                "GitLab.gitlab-workflow",
+                "ms-python.python",
+                "eamodio.gitlens",
+                "ryanluker.vscode-coverage-gutters",
+                "tamasfe.even-better-toml"
+            ]
+        }
+    },
+    "postCreateCommand": "pip install --upgrade pip; pip install poetry;",
+    "postStartCommand": "poetry config virtualenvs.create false --local; poetry install;"
+}
